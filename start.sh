@@ -12,6 +12,14 @@ sed -i "s#^DocumentRoot \".*#DocumentRoot \"/app/$WEBAPP_ROOT\"#g" /etc/apache2/
 sed -i "s#/var/www/localhost/htdocs#/app/$WEBAPP_ROOT#" /etc/apache2/httpd.conf
 printf "\n<Directory \"/app/$WEBAPP_ROOT\">\n\tAllowOverride All\n</Directory>\n" >> /etc/apache2/httpd.conf
 
+#configurando o xdebug
+printf "\nzend_extension=/usr/lib/php7/modules/xdebug.so" >> /etc/php7/conf.d/00-xdebug.ini
+printf "\xdebug.coverage_enable=0 " >> /etc/php7/conf.d/00-xdebug.ini
+printf "\xdebug.remote_enable=1  " >> /etc/php7/conf.d/00-xdebug.ini    
+printf "\xdebug.remote_connect_back=1" >> /etc/php7/conf.d/00-xdebug.ini
+printf "\xdebug.remote_log=/app/z_data/xdebug.log" >> /etc/php7/conf.d/00-xdebug.ini
+printf "\xdebug.remote_autostart=true  " >> /etc/php7/conf.d/00-xdebug.ini
+
 if [ -z "$WEBAPP_USER_ID" ]; then
     chown -R apache:apache /app
 else
