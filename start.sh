@@ -20,6 +20,9 @@ printf "\xdebug.remote_connect_back=1" >> /etc/php7/conf.d/00-xdebug.ini
 printf "\xdebug.remote_log=/app/z_data/xdebug.log" >> /etc/php7/conf.d/00-xdebug.ini
 printf "\xdebug.remote_autostart=true  " >> /etc/php7/conf.d/00-xdebug.ini
 
+#habilitando o display error do php
+sed -i "s#display_error=Off#display_error=On#" /etc/php7/php.ini
+
 if [ -z "$WEBAPP_USER_ID" ]; then
     chown -R apache:apache /app
 else
