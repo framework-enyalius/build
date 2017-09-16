@@ -37,4 +37,6 @@ else
     sed -i "s/Group apache/Group $runApacheAsUser/" $apacheConfigPath
 fi
 
-httpd -D FOREGROUND
+httpd -D FOREGROUND &
+touch /var/log/apache2/error.log
+tail -f /var/log/apache2/error.log 
