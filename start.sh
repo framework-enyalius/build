@@ -14,11 +14,11 @@ printf "\n<Directory \"/app/$WEBAPP_ROOT\">\n\tAllowOverride All\n</Directory>\n
 
 #configurando o xdebug
 printf "\nzend_extension=/usr/lib/php7/modules/xdebug.so" >> /etc/php7/conf.d/00-xdebug.ini
-printf "\xdebug.coverage_enable=0 " >> /etc/php7/conf.d/00-xdebug.ini
-printf "\xdebug.remote_enable=1  " >> /etc/php7/conf.d/00-xdebug.ini    
-printf "\xdebug.remote_connect_back=1" >> /etc/php7/conf.d/00-xdebug.ini
-printf "\xdebug.remote_log=/app/z_data/xdebug.log" >> /etc/php7/conf.d/00-xdebug.ini
-printf "\xdebug.remote_autostart=true  " >> /etc/php7/conf.d/00-xdebug.ini
+printf "\nxdebug.coverage_enable=0 " >> /etc/php7/conf.d/00-xdebug.ini
+printf "\nxdebug.remote_enable=1  " >> /etc/php7/conf.d/00-xdebug.ini    
+printf "\nxdebug.remote_connect_back=1" >> /etc/php7/conf.d/00-xdebug.ini
+printf "\nxdebug.remote_log=/app/z_data/xdebug.log" >> /etc/php7/conf.d/00-xdebug.ini
+printf "\nxdebug.remote_autostart=true  " >> /etc/php7/conf.d/00-xdebug.ini
 
 #habilitando o display error do php
 sed -i "s#display_error=Off#display_error=On#" /etc/php7/php.ini
