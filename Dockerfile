@@ -10,6 +10,7 @@ RUN rm -f /var/cache/apk/* \
 
 
 EXPOSE 80
+EXPOSE 443
 
 ADD start.sh /opt/utils/
 
