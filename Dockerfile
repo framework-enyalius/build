@@ -14,6 +14,6 @@ EXPOSE 80 443
 ADD start.sh /opt/utils/
 
 RUN chmod +x /opt/utils/start.sh
-COPY scripts/etc/apache2/conf.d/ssl.conf /etc/apache2/conf.d/ssl.conf
+COPY ssl.conf /etc/apache2/conf.d/ssl.conf
 
 ENTRYPOINT ["/opt/utils/start.sh"]
