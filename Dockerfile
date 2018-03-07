@@ -8,7 +8,6 @@ RUN rm -f /var/cache/apk/* \
     && mkdir /run/apache2 \
     && mkdir -p /opt/utils 
     
-RUN /usr/sbin/a2enmod ssl
 
 EXPOSE 80
 EXPOSE 443
