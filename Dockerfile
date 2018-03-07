@@ -7,7 +7,8 @@ RUN apk --update add apache2 php7-apache2 curl php7-curl php7-json  php7-openssl
 RUN rm -f /var/cache/apk/* \
     && mkdir /run/apache2 \
     && mkdir -p /opt/utils 
-
+    
+RUN /usr/sbin/a2enmod ssl
 
 EXPOSE 80
 EXPOSE 443
