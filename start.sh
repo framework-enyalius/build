@@ -32,7 +32,10 @@ else
     apacheConfigPath="/etc/apache2/httpd.conf"
     addgroup -g $WEBAPP_USER_ID $runApacheAsUser
     adduser -D -H -g "webapp user" -G $runApacheAsUser -u $WEBAPP_USER_ID $runApacheAsUser
-    chown -R $WEBAPP_USER_ID:$WEBAPP_USER_ID /app    
+    chown -R $WEBAPP_USER_ID:$WEBAPP_USER_ID /app  
+    mkdir /tmp/eny
+    chown -R $WEBAPP_USER_ID:$WEBAPP_USER_ID /tmp/eny    
+
     sed -i "s/User apache/User $runApacheAsUser/" $apacheConfigPath
     sed -i "s/Group apache/Group $runApacheAsUser/" $apacheConfigPath
 fi
