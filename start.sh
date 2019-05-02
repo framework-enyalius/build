@@ -19,7 +19,11 @@ printf "\nxdebug.remote_enable=1  " >> /etc/php7/conf.d/00-xdebug.ini
 printf "\nxdebug.remote_connect_back=1" >> /etc/php7/conf.d/00-xdebug.ini
 printf "\nxdebug.remote_log=/app/z_data/xdebug.log" >> /etc/php7/conf.d/00-xdebug.ini
 printf "\nxdebug.remote_autostart=true  " >> /etc/php7/conf.d/00-xdebug.ini
-printf "\nxdebug.profiler_enable=1" >> /etc/php7/conf.d/00-xdebug.ini
+printf "\nxdebug.profiler_append=On" >> /etc/php7/conf.d/00-xdebug.ini
+printf "\nxdebug.profiler_output_dir=/tmp/eny" >> /etc/php7/conf.d/00-xdebug.ini
+printf "\nxdebug.profiler_enable_trigger=On" >> /etc/php7/conf.d/00-xdebug.ini
+
+
 
 
 #habilitando o display error do php
