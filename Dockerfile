@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM alpine:latest
 MAINTAINER Marcio Bigolin <marcio.bigolinn@gmail.com>
 LABEL Description="Uma pequena imagem para você testar o poder do Eyalius"
 
